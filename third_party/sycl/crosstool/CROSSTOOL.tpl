@@ -163,6 +163,9 @@ toolchain {
   cxx_builtin_include_directory: "/usr/lib64"
   cxx_builtin_include_directory: "/usr/local/include"
   cxx_builtin_include_directory: "/usr/include"
+  cxx_builtin_include_directory: "/usr/local/cuda/include"
+  cxx_builtin_include_directory: "/usr/lib/gcc/x86_64-redhat-linux/6.4.1/include"
+  cxx_builtin_include_directory: "/usr/local/cuda/include/crt/"
 
   cxx_builtin_include_directory: "%{computecpp_toolkit_path}"
   cxx_builtin_include_directory: "%{python_lib_path}"

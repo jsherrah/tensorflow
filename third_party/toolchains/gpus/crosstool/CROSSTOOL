@@ -299,4 +299,7 @@ toolchain {
   cxx_builtin_include_directory: "/usr/local/lib/clang/6.0.0/include"
   cxx_builtin_include_directory: "/usr/include/x86_64-linux-gnu"
   cxx_builtin_include_directory: "/usr/include"
+  cxx_builtin_include_directory: "/usr/local/cuda/include"
+  cxx_builtin_include_directory: "/usr/lib/gcc/x86_64-redhat-linux/6.4.1/include"
+  cxx_builtin_include_directory: "/usr/local/cuda/include/crt/"
 }

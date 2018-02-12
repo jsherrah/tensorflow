@@ -395,6 +395,9 @@ toolchain {
   cxx_builtin_include_directory: "/usr/lib/clang"
   cxx_builtin_include_directory: "/usr/local/include"
   cxx_builtin_include_directory: "/usr/include"
+  cxx_builtin_include_directory: "/usr/local/cuda/include"
+  cxx_builtin_include_directory: "/usr/lib/gcc/x86_64-redhat-linux/6.4.1/include"
+  cxx_builtin_include_directory: "/usr/local/cuda/include/crt/"
   tool_path { name: "gcov" path: "/usr/bin/gcov" }
 
   # C(++) compiles invoke the compiler (as that is the one knowing where

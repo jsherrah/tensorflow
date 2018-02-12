@@ -21,6 +21,7 @@ import argparse
 
 import numpy as np
 import tensorflow as tf
+import matplotlib.pyplot as plt
 
 
 def load_graph(model_file):
@@ -134,7 +135,20 @@ if __name__ == "__main__":
     })
   results = np.squeeze(results)
 
-  top_k = results.argsort()[-5:][::-1]
-  labels = load_labels(label_file)
-  for i in top_k:
-    print(labels[i], results[i])
+  print( 'results shape = %s' %str(results.shape))
+
+  if results.ndim == 3:
+    # semantic labelling
+    labs = np.argmax(results, axis=2)
+    plt.subplot(1,2,1)
+    plt.imshow(results[:,:,1])
+    plt.title('probs')
+    plt.subplot(1,2,2)
+    plt.imshow(labs)
+    plt.title('labels')
+    plt.show()
+  else:
+    top_k = results.argsort()[-5:][::-1]
+    labels = load_labels(label_file)
+    for i in top_k:
+      print(labels[i], results[i])

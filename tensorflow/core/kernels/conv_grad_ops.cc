@@ -63,8 +63,8 @@ Status ConvBackpropExtractAndVerifyDimensionV2(
     return errors::InvalidArgument(
         label, ": Size of out_backprop doesn't match computed: ", "actual = ",
         dim->output_size, ", computed = ", out_size,
-        "spatial_dim: ", spatial_dim, " input: ", dim->input_size,
-        " filter: ", dim->filter_size, " output: ", dim->output_size,
+        ", spatial_dim: ", spatial_dim, " input: ", dim->input_size,
+        " filter size: ", dim->filter_size, " output: ", dim->output_size,
         " stride: ", dim->stride, " dilation: ", dim->dilation);
   }
 

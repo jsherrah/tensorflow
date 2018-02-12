@@ -67,7 +67,7 @@ if (nativeBuildSystem == 'makefile') {
 // If building with Bazel, this is the location of the bazel binary.
 // NOTE: Bazel does not yet support building for Android on Windows,
 // so in this case the Makefile build must be used as described above.
-def bazelLocation = '/usr/local/bin/bazel'
+def bazelLocation = '/usr/bin/bazel'
 
 // import DownloadModels task
 project.ext.ASSET_DIR = projectDir.toString() + '/assets'
@@ -143,7 +143,8 @@ task buildNativeBazel(type: Exec) {
          'tensorflow/examples/android:tensorflow_native_libs',  \
          '--crosstool_top=//external:android/crosstool',  \
          '--cpu=' + cpuType,  \
-         '--host_crosstool_top=@bazel_tools//tools/cpp:toolchain'
+         '--host_crosstool_top=@bazel_tools//tools/cpp:toolchain', \
+            '--verbose_failures'
 }
 
 task buildNativeMake(type: Exec) {
